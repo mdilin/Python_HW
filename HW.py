@@ -32,12 +32,17 @@ plt.plot(x, a * np.sin(x * b))
 plt.ylim(-5, 5)
 st.pyplot(fig)
 
+st.markdown("""
+### Put some file and we will decode it!
+""")
+
 # можно принимать на вход файл, и визуализировать его:
 uploaded_file = st.file_uploader("Upload some file")
 if uploaded_file is not None:
     for i, line in enumerate(
         uploaded_file.getvalue().decode('utf-8').splitlines()):
         st.text(f"{i}. {line}".rstrip())
+
 
 # познакомимся с такой вещью, как git (github)
 # как написать код, который будут дорабатывать другие люди?
