@@ -13,7 +13,7 @@ df = pd.DataFrame({'x': [10, 20, 30, 40],
 x_max = st.slider('Max value of x', float(df['x'].max()))
 st.title("My streamlit app")
 st.markdown("""
-Let's look down at this fine dataframe:
+Let's look down at this fine dataframe (tested):
 """)
 
 df[df['x'] < x_max]
