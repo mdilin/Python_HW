@@ -53,6 +53,7 @@ with st.echo(code_location='below'):
     появлялись во вкладке "в тренде".""")
     x2 = st.slider('Количество отображаемых видео (от 5 до 25)', 5, 25)
 
+    ### FROM: https://www.kaggle.com/wardalaknaoui1/sentiment-analysis-usa-step-by-step-emojis-tags
     st.markdown("""Видео с наибольшим количеством лайков, которые были "в тренде": """)
     most_liked = df[['title', 'likes']].groupby('title').sum().sort_values(by='likes', ascending=False).head(x2)
     most_liked
@@ -60,6 +61,7 @@ with st.echo(code_location='below'):
     st.markdown("""Видео с наибольшим количеством дизлайков, которые были "в тренде": """)
     most_disliked = df[['title', 'dislikes']].groupby('title').sum().sort_values(by='dislikes', ascending=False).head(x2)
     most_disliked
+    ### END FROM
 
     st.write(""" ### Давайте поговорим об корреляциях. """)
 
